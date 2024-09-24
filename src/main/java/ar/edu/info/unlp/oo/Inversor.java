@@ -6,7 +6,7 @@ public class Inversor {
     private String nombre;
     List<valorAcciones> inversiones;
 
-    public void inversor(String nombre) {
+    public Inversor(String nombre) {
         this.nombre = nombre;
         inversiones = new ArrayList<>();
     }

@@ -11,9 +11,38 @@ public class InversionEnAcciones implements valorAcciones {
         this.valorUnitario = valorUnitario;
     }
     
+    
     @Override
     public double valorActual() {
         return cantidad * valorUnitario;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+ 
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+
+    public double getValorUnitario() {
+        return valorUnitario;
+    }
+
+
+    public void setValorUnitario(double valorUnitario) {
+        this.valorUnitario = valorUnitario;
     }
 
 }
