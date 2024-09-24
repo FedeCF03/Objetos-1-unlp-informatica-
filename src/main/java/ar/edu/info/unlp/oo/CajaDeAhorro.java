@@ -19,7 +19,7 @@ public class CajaDeAhorro extends  Cuenta {
     @Override
     public boolean transferirACuenta(double monto, Cuenta cuentaDestino) {
         double montoaux = monto * 1.02;
-        if (this.puedoExtraer(montoaux)) {
+        if (this.puedoExtraer(montoaux) && cuentaDestino != null}) {
             this.extraerSinControlar(montoaux);
             cuentaDestino.depositar(monto);
             return true;
