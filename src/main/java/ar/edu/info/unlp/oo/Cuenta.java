@@ -29,7 +29,7 @@ public abstract class Cuenta {
     }
     
     public boolean transferirACuenta(double monto,Cuenta cuentaDestino) {
-        if (this.puedoExtraer(monto)) {
+        if (this.puedoExtraer(monto) && cuentaDestino != null) {
             this.extraerSinControlar(monto);
             cuentaDestino.depositar(monto);
             return true;
