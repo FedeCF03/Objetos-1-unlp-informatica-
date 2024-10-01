@@ -17,7 +17,7 @@ public class ClienteDeCorreo {
     }
 
     public Email buscar(String texto) {
-        return carpetas.stream().map(carpeta -> carpeta.buscar(texto)).filter(email -> email != null).findFirst()
+        return carpetas.stream().map(carpeta -> carpeta.buscar(texto)).findFirst()
                 .orElse(null);
     }
 
