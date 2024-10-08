@@ -1,6 +1,7 @@
 
 package ar.edu.info.unlp.oo.ejer13;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class Email {
@@ -8,18 +9,22 @@ class Email {
     private String cuerpo;
     private List<Archivo> adjuntos;
 
-    public Email(String titulo, String cuerpo, List<Archivo> adjuntos) {
+    public Email(String titulo, String cuerpo) {
         this.titulo = titulo;
         this.cuerpo = cuerpo;
-        this.adjuntos = adjuntos;
+        adjuntos = new ArrayList<>();
     }
 
     public void agregarAdjunto(Archivo archivo) {
         adjuntos.add(archivo);
     }
 
-    public Integer getTamanio() {
-        return adjuntos.stream().map(archivo -> archivo.getTamanio()).reduce(0, (a, b) -> a + b);
+    public int getTamanio() {
+        return cuerpo.length() + getTamanioArchivos() + titulo.length();
+    }
+
+    private int getTamanioArchivos() {
+        return adjuntos.stream().mapToInt(archivo -> archivo.getTamanio()).sum();
     }
 
     public String getTitulo() {

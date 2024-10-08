@@ -41,8 +41,13 @@ public class Carpeta {
         emails.add(email);
     }
 
+    public int getEspacioOcupado() {
+        return emails.stream().mapToInt(email -> email.getTamanio()).sum();
+    }
+
     public Email buscar(String texto) {
-        return emails.stream().filter(email -> email.getTitulo().contains(texto)).findFirst().orElse(null);
+        return emails.stream().filter(email -> email.getTitulo().contains(texto) || email.getCuerpo().contains(texto))
+                .findFirst().orElse(null);
     }
 
 }

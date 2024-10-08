@@ -7,7 +7,7 @@ public class Archivo {
         this.nombre = nombre;
     }
 
-    public Integer getTamanio() {
+    public int getTamanio() {
         return nombre.length();
     }
 
