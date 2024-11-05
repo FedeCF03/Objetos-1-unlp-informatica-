@@ -18,16 +18,13 @@ public class Pedido {
         this.cliente = cliente;
     }
 
-    private void agregarProducto() {
-        if (vendedor.tieneStock(producto, cantidad)) {
-            vendedor.reducirStock(producto, cantidad);
-            cliente.agregarPedido(this);
-        }
+    public double calcularTotal() {
+        return formaPago.costoTotal(producto.getPrecio(), this.cantidad) + formaenvio.costoEnvio();
+
     }
 
-    public double calcularTotal() {
-        return formaPago.costoTotal() + formaenvio.calcularTotal());
-
+    public String getCategoria() {
+        return this.producto.getCategoria();
     }
 
 }
